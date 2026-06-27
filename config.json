@@ -1,5 +1,4 @@
 {
-  "PICOCLAW_GATEWAY_HOST": "0.0.0.0",
   "model_list": [
     {
       "model_name": "puru",
@@ -10,15 +9,6 @@
   "agents": {
     "defaults": {
       "model_name": "puru"
-    }
-  },
-  "tools": {
-    "web": {
-      "brave": {
-        "enabled": true,
-        "api_key": "YOUR_BRAVE_API_KEY",
-        "max_results": 5
-      }
     }
   }
 }
