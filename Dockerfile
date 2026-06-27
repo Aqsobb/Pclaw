@@ -1,23 +1,20 @@
 FROM sipeed/picoclaw:latest
 
-# Reset ENTRYPOINT bawaan image agar tidak bentrok dengan CMD kita
+# Reset entrypoint bawaan agar tidak double command
 ENTRYPOINT []
 
-# Mengatur host agar listen di semua interface network
+# Set host dan paksa port internalnya ke 3000 agar sesuai health check PaaS
 ENV PICOCLAW_GATEWAY_HOST=0.0.0.0
-
-# Beberapa aplikasi Go/Node otomatis membaca port dari env PORT
+ENV PICOCLAW_GATEWAY_PORT=3000
 ENV PORT=3000
 
-# Sediakan folder config sesuai dokumentasi
+# Buat direktori dan salin config
 RUN mkdir -p /root/.picoclaw/ && mkdir -p /app/docker/data/
-
-# Salin konfigurasi yang kamu buat ke lokasi aplikasi
 COPY config.json /root/.picoclaw/config.json
 COPY config.json /app/docker/data/config.json
 
-# Ekspos port 3000
+# Ekspos port 3000 ke jaringan luar
 EXPOSE 3000
 
-# Menjalankan launcher secara langsung tanpa menumpuk command gateway bawaan
-CMD ["picoclaw", "launcher", "--host", "0.0.0.0"]
+# Jalankan sub-command gateway yang valid dengan flag --host yang didukung
+CMD ["picoclaw", "gateway", "--host", "0.0.0.0"]
