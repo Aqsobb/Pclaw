@@ -1,23 +1,21 @@
-# Menggunakan base image resmi picoclaw (asumsi image name sesuai convention repo sipeed/picoclaw)
 FROM sipeed/picoclaw:latest
 
-# Set environment agar mendengarkan di semua network interface (0.0.0.0)
+# Set host ke 0.0.0.0 agar bisa di-binding dari Docker host network
 ENV PICOCLAW_GATEWAY_HOST=0.0.0.0
-# Jika launcher/gateway mendukung custom port via env, kita set ke 3000
-ENV PORT=3000
-ENV PICOCLAW_LAUNCHER_PORT=3000
 
-# Buat direktori konfigurasi sesuai dokumentasi
+# Buat direktori config bawaan
 RUN mkdir -p /root/.picoclaw/ && mkdir -p /app/docker/data/
 
-# Salin config.json yang sudah kita buat ke lokasi pembacaan aplikasi
-# Menyalin ke kedua tempat (Gateway mode & Quick start mode) agar aman
+# Salin konfigurasi ke lokasi yang dibaca aplikasi
 COPY config.json /root/.picoclaw/config.json
 COPY config.json /app/docker/data/config.json
 
-# Expose port 3000 sesuai request
-EXPOSE 3000
+# --- PILIH SALAH SATU MODE DI BAWAH INI SEBAGAI CMD ---
 
-# Jalankan aplikasi dengan profile launcher (Web Console) sebagai default entrypoint
-# Menggunakan sh -c untuk fleksibilitas jika dijalankan di environment cloud
-CMD ["picoclaw", "launcher", "--host", "0.0.0.0", "--port", "3000"]
+# OPSI A: Jika ingin menjalankan Web Console / Launcher (Default port internal: 18800)
+EXPOSE 18800
+CMD ["picoclaw", "launcher", "--host", "0.0.0.0"]
+
+# OPSI B: Jika hanya ingin menjalankan Webhook Gateway (Gunakan ini jika Opsi A tidak ada)
+# EXPOSE 8080 
+# CMD ["picoclaw", "gateway", "--host", "0.0.0.0"]
