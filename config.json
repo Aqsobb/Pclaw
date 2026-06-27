@@ -2,13 +2,21 @@
   "model_list": [
     {
       "model_name": "puru",
-      "model": "puru",
-      "api_key": "sk-00fa7c868847b760-fbkl9l-e4416500"
+      "model": "openai/puru",
+      "api_key": "sk-00fa7c868847b760-fbkl9l-e4416500",
+      "api_base": "https://betatestervueui2-b.hf.space/v1"
     }
   ],
   "agents": {
     "defaults": {
       "model_name": "puru"
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "bot_token": "8535593654:AAEaEddzmyzVxkwWPy1l8JiHT7UfPZ-pOtA",
+      "webhook_url": "https://political-benoite-nue-api-482af90a.koyeb.app/webhooks/telegram"
     }
   }
 }
