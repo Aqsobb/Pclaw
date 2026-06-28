@@ -5,7 +5,7 @@
       "model": "openai/puru",
       "api_keys": ["sk-00fa7c868847b760-fbkl9l-e4416500"],
       "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "rpm":10
+      "rpm": 10
     },
     {
       "model_name": "puru2",
@@ -22,8 +22,10 @@
   ],
   "agents": {
     "defaults": {
-      "primary": "puru1",
-      "fallbacks":["puru2","puru3"],
+      "model": {
+        "primary": "puru1",
+        "fallbacks": ["puru2", "puru3"]
+      },
       "context_window": 131072,
       "summarize_token_percent": 75,
       "summarize_message_threshold": 20
