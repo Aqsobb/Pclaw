@@ -8,59 +8,11 @@
       ],
       "api_base": "https://betatestervueui2-b.hf.space/v1",
       "request_timeout": 300
-    },
-    {
-      "model_name": "nvidia",
-      "model": "openai/nvidia",
-      "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
-      ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "request_timeout": 300
-    },
-    {
-      "model_name": "openrouter",
-      "model": "openai/openrouter",
-      "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
-      ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "request_timeout": 300
-    },
-    {
-      "model_name": "ollama",
-      "model": "openai/ollama",
-      "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
-      ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "request_timeout": 300
-    },
-    {
-      "model_name": "gemini",
-      "model": "openai/gemini",
-      "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
-      ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "request_timeout": 300
-    },
-    {
-      "model_name": "mimo",
-      "model": "openai/mimo",
-      "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
-      ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
-      "request_timeout": 300
     }
   ],
   "agents": {
     "defaults": {
       "model_name": "opencode",
-      "context_window": 20480,
-      "summarize_token_percent": 75,
-      "summarize_message_threshold": 20,
       "max_tool_iterations": 50
     }
   },
