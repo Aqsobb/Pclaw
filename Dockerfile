@@ -17,6 +17,7 @@ RUN mkdir -p /root/.picoclaw/ && mkdir -p /app/docker/data/
 # Salin config.json yang sudah bersih
 COPY config.json /root/.picoclaw/config.json
 COPY config.json /app/docker/data/config.json
+COPY MEMORY.md /root/.picoclaw/workspace/memory/MEMORY.md
 
 # Ekspos port 3000 untuk health check platform cloud/PaaS kamu
 EXPOSE 3000
