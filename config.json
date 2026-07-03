@@ -13,7 +13,7 @@
   "agents": {
     "defaults": {
       "model_name": "opencode",
-      "max_tool_iterations": 50
+      "max_tool_iterations": 1000
     }
   },
   "channels": {
