@@ -4,16 +4,16 @@
       "model_name": "opencode",
       "model": "openai/opencode",
       "api_keys": [
-        "sk-00fa7c868847b760-fbkl9l-e4416500"
+        "sk-eee174084062334b-82beis-e0ce4451"
       ],
-      "api_base": "https://betatestervueui2-b.hf.space/v1",
+      "api_base": "https://garenafree-9ru.hf.space/v1",
       "request_timeout": 300,
       "rpm":15
     }
   ],
   "agents": {
     "defaults": {
-      "model_name": "opencode",
+      "model_name": "9router",
       "max_tool_iterations": 1000
     }
   },
