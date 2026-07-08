@@ -2,7 +2,7 @@
   "model_list": [
     {
       "model_name": "9router",
-      "model": "openai/opencode",
+      "model": "9router",
       "api_keys": [
         "sk-eee174084062334b-82beis-e0ce4451"
       ],
