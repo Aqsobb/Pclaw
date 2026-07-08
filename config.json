@@ -13,7 +13,7 @@
   ],
   "agents": {
     "defaults": {
-      "model_name": "opencode",
+      "model_name": "9router",
       "max_tool_iterations": 1000
     }
   },
